@@ -1,0 +1,43 @@
+# Validation or Testing
+# approach: validation
+
+
+# Data
+path:
+  val:
+    base: './data/otto-validation/'
+    train: './data/otto-validation/train_parquet'
+    test: './data/otto-validation/test_parquet'
+    # test_labels: './data/otto-validation/test_labels.parquet'
+  test:
+    base: './data/otto-chunk-data-inparquet-format/'
+    train: './data/otto-chunk-data-inparquet-format/train_parquet'
+    test: './data/otto-chunk-data-inparquet-format/test_parquet'
+  save_base: './output/features'
+
+# otto_valid_test_list:
+#   base: './data/otto-valid-test-list'
+#   val_ver: 1
+#   test_ver: 1
+
+# Seed
+seed: 42
+
+# # Aid Features
+# aid_features:
+#   aid: count
+#   session: nunique
+#   type: [mean, min, max, std]
+
+# # User Features
+# user_features:
+#   session: count
+#   aid: nunique
+#   type: [mean, min, max, std]
+
+# # User-Aid Interactions:
+# user_aid:
+#   item_clicked: TODO
+
+
+

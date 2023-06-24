@@ -1,0 +1,5 @@
+.env
+__pycache__/
+output/*
+data/
+notebooks/unused/*

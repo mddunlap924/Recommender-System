@@ -1,0 +1,89 @@
+# Validation or Testing
+approach: test
+
+# Partial Load for Debugging Code
+baseline_suggest:
+  load: False
+  path: './output/candidates'
+  top_n:
+    clicks: 20
+    buys: 15
+    carts: 15
+  partial: False
+
+# Number of Candidates
+candidates: 20
+cand_percent: 1.0
+
+# Data
+path:
+  val:
+    base: './data/otto-validation/'
+    train: './data/otto-validation/train'
+    test: './data/otto-validation/test_parquet'
+    test_labels: './data/otto-validation/test_labels.parquet'
+  test:
+    base: './data/otto-chunk-data-inparquet-format/'
+    train: './data/otto-chunk-data-inparquet-format/train_parquet'
+    test: './data/otto-chunk-data-inparquet-format/test_parquet'
+  features:
+    base: './output/features'
+
+otto_valid_test_list:
+  base: './data/otto-valid-test-list'
+  val_ver: 1
+  test_ver: 1
+
+# Seed
+seed: 42
+
+# Type Labels
+type_labels: {'clicks': 0, 'carts': 1, 'orders': 2}
+
+# Type Weight Multipliers
+type_weight_multipliers: {'0': 1, '1': 5, '2': 4}
+
+# Co-vis-matrix: 
+co_vis_matrix:
+  disk_pieces:
+  save_path: ./output/co-vis-matrices
+  cart_orders: 
+    overwrite: True
+    fun_name: cart_orders
+    ver: 0
+    file_name: carts_orders
+    type_weight: {'0': 1, '1': 5, '2': 4}
+    top_n: 15
+  buy_to_buy: 
+    overwrite: True
+    fun_name: buy_to_buy
+    ver: 0
+    file_name: buy2buy
+    type_weight: None
+    top_n: 15
+  click: 
+    overwrite: True
+    fun_name: clicks
+    ver: 0
+    file_name: clicks
+    type_weight: None
+    top_n: 20
+
+# # Aid Features
+# aid_features:
+#   aid: count
+#   session: nunique
+#   type: mean
+
+# # User Features
+# user_features:
+#   session: count
+#   aid: nunique
+#   type: mean
+
+# # User-Aid Interactions:
+# user_aid:
+#   item_clicked: TODO
+
+
+
